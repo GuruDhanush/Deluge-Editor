@@ -1,0 +1,58 @@
+:root {
+    --theme-color: #fff;
+}
+
+body {
+    background-color: var(--theme-color);
+}
+
+
+.nav-bar {
+    height: 60px;
+    width: 100%;
+    background-color: #278ee8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-header {
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.right  img {
+    height: 24px;
+    width: 24px;
+    filter: invert(99%) sepia(0%) saturate(2%) hue-rotate(213deg) brightness(113%) contrast(100%);
+}
+
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.theme-button,
+.github-button {
+    padding: 10px
+}
+
+.code-container {
+    padding: 10px;
+    border: grey solid 1px;
+    width: 99vw;
+    height: 90vh;
+}
+
+svg {
+    background-color: #fff;
+}
