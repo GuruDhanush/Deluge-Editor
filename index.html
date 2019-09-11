@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Deluge Web code editor. Supports syntax highlighting, specific error
+    position.">
     <title>Deluge Editor</title>
     <link rel="stylesheet" href="./main.css">
+    <link rel="preload" as="script" href="app.bundle.js">
+    <link rel="preload" as="script" href="editor.worker.bundle.js">
+    <link rel="preload" as="script" href="editor.features.bundle.js">
 </head>
 
 <body>
@@ -16,22 +21,26 @@
         </div>
 
         <div class="right">
-            <div class="theme-button" data-theme="0" id="theme-button" title="Change theme">
-                <img src="./assets/dark_mode.svg" id="mode">
+            <div class="theme-button" data-theme="0" id="theme-button" title="Change theme" role="button"
+                aria-pressed="false" aria-label="Change Theme">
+                <img src="./assets/dark_mode.svg" id="mode" alt="Theme button">
             </div>
 
             <div class="github-button" title="Naviagate to github repo">
-                <a href="https://github.com/GuruDhanush/Deluge-Editor" target="_blank">
-                    <img src="./assets/github.svg"> </img>
+                <a href="https://github.com/GuruDhanush/Deluge-Editor" target="_blank" role="button"
+                    aria-pressed="false" aria-label="Go to Github repo" rel="noopener" >
+                    <img src="./assets/github.svg" alt="Github Icon">
                 </a>
             </div>
         </div>
 
     </div>
-    <div id="code" class="code-container">
+    <main>
+        <div id="code" class="code-container">
 
-    </div>
-    <script src="./app.bundle.js"></script>
+        </div>
+    </main>
+
 </body>
 
 </html>
