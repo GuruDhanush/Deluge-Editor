@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Deluge Web code editor. Supports syntax highlighting, specific error
+    position.">
     <title>Deluge Editor</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -15,21 +18,33 @@
         </div>
 
         <div class="right">
-            <div class="theme-button" data-theme="0" id="theme-button" title="Change theme">
-                <img src="./dark_mode.svg" id="mode">
+            <div class="theme-button" data-theme="0" id="theme-button" title="Change theme" role="button"
+                aria-pressed="false" aria-label="Change Theme">
+                        <img inline src="src/assets/light_mode.svg" alt="light mode image">
+                        <img inline src="src/assets/dark_mode.svg" alt="dark mode image">
             </div>
 
             <div class="github-button" title="Naviagate to github repo">
-                <a href="https://github.com/GuruDhanush/Deluge-Editor" target="_blank">
-                    <img src="./github.svg"> </img>
+                <a href="https://github.com/GuruDhanush/Deluge-Editor" target="_blank" role="button"
+                    aria-pressed="false" aria-label="Go to Github repo" rel="noopener">
+                    <img inline src="src/assets/github.svg" alt="Github Icon">
                 </a>
             </div>
         </div>
 
     </div>
-    <div id="code" class="code-container">
+    <main>
+        <div id="code" class="code-container">
 
-    </div>
+        </div>
+    </main>
 </body>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+</script>
 
 </html>

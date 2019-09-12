@@ -15,26 +15,32 @@ import 'monaco-editor/esm/vs/editor/contrib/multicursor/multicursor.js';
 import 'monaco-editor/esm/vs/editor/contrib/wordHighlighter/wordHighlighter.js';
 
 
+
 import { delugeMonarchConfiguration } from './dg.monarch';
 import { delugeLangConfiguration } from './dg.configuration';
+ 
 
 
 
 document.getElementById('theme-button').onclick = function() {
   let btn = document.getElementById('theme-button');
   let theme = +btn.dataset.theme;
+  let lightMode : HTMLElement = btn.querySelector('.light_mode');
+  let darkMode : HTMLElement = btn.querySelector('.dark_mode');
 
   if(theme == 0){
     btn.setAttribute('data-theme', '1');
     monaco.editor.setTheme('vs-dark');
-    btn.querySelector('img').src = "./assets/light_mode.svg";
+    lightMode.style.display = 'inline';
+    darkMode.style.display = 'none';
     document.documentElement.style.setProperty('--theme-color', '#1e1e1e' );
 
   } 
   if(theme == 1) {
      btn.setAttribute('data-theme', '0');
      monaco.editor.setTheme('vs-light');
-     btn.querySelector('img').src = "./assets/dark_mode.svg";
+     lightMode.style.display = 'none';
+     darkMode.style.display = 'inline';
      document.documentElement.style.setProperty('--theme-color', '#fff');
   }
 };
@@ -44,7 +50,7 @@ document.getElementById('theme-button').onclick = function() {
 // @ts-ignore
 self.MonacoEnvironment = {
   getWorkerUrl: function (moduleId, label) {
-    return './editor.worker.bundle.js';
+    return '/editor.worker.bundle.js';
   }
 }
 
@@ -79,8 +85,8 @@ const editor = monaco.editor.create(document.getElementById('code'), {
   fontSize: 20
 });
 
-
-var worker = new Worker('./worker.js');
+ 
+var worker = new Worker('/worker.js');
 
 worker.onmessage = function (event) {
   if (event.data instanceof Object && 

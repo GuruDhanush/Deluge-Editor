@@ -27,14 +27,18 @@ body {
     padding: 10px;
     font-size: 20px;
     color: white;
+    font-weight: 500;
 }
 
-.right  img {
+.right  svg {
     height: 24px;
     width: 24px;
     filter: invert(99%) sepia(0%) saturate(2%) hue-rotate(213deg) brightness(113%) contrast(100%);
 }
 
+.light_mode {
+    display: none;
+}
 
 .right {
     display: flex;
@@ -43,7 +47,8 @@ body {
 
 .theme-button,
 .github-button {
-    padding: 10px
+    padding: 10px;
+    cursor: pointer;
 }
 
 .code-container {
@@ -51,8 +56,4 @@ body {
     border: grey solid 1px;
     width: 99vw;
     height: 90vh;
-}
-
-svg {
-    background-color: #fff;
 }
