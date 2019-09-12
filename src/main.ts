@@ -50,7 +50,7 @@ document.getElementById('theme-button').onclick = function() {
 // @ts-ignore
 self.MonacoEnvironment = {
   getWorkerUrl: function (moduleId, label) {
-    return '/editor.worker.bundle.js';
+    return './editor.worker.bundle.js';
   }
 }
 
@@ -86,7 +86,7 @@ const editor = monaco.editor.create(document.getElementById('code'), {
 });
 
  
-var worker = new Worker('/worker.js');
+var worker = new Worker('./worker.js');
 
 worker.onmessage = function (event) {
   if (event.data instanceof Object && 

@@ -91,7 +91,7 @@ module.exports = {
             favicon: 'src/assets/icon.png'
         }),
         new WebpackPwaManifest({
-            name: "Deluge Editor",
+            name: "Deluge Editor",  
             short_name: "Deluge",
             start_url: ".",
             display: "standalone",
@@ -104,6 +104,8 @@ module.exports = {
                     sizes: [48, 192, 256 ]
                 }
             ],
+            inject: true,
+            ios: true
         }),
         new HtmlWebpackInlineSVGPlugin({
             runPreEmit: true,
