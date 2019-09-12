@@ -25,8 +25,8 @@
   "description": "Deluge Online code editor",
   "theme_color": "blue",
   "serviceworker": {
-    "src": "Deluge-Editor/service-worker.js",
-    "scope": "/Deluge-Editor",
+    "src": "./Deluge-Editor/service-worker.js",
+    "scope": "/Deluge-Editor/",
     "type": "",
     "update_via_cache": "none"
   }
